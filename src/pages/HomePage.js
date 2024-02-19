@@ -1,5 +1,5 @@
-import React, { useState , useRef} from "react";
-import { toPng } from 'html-to-image';
+import React, { useState, useRef } from "react";
+import { toPng } from "html-to-image";
 
 // import clothes from "../assets/Clothes/Bear Suit.png";
 
@@ -10,8 +10,6 @@ import { headData } from "../data/Head";
 import { MouthData } from "../data/Mouth";
 import { skinData } from "../data/skin";
 
-
-
 const HomePage = () => {
   const [currentBg, setCurrentBg] = useState(1);
   const [currentCloth, setCurrentCloth] = useState(1);
@@ -20,6 +18,23 @@ const HomePage = () => {
   const [currentmouth, setCurrentmouth] = useState(1);
   const [currentskin, setCurrentskin] = useState(1);
   const elementRef = useRef(null);
+
+  const handleGenerateBtn = () => {
+    const backgroundNumber = Math.floor(Math.random() * background.length) + 1;
+    setCurrentBg(backgroundNumber);
+
+    const clothNumber = Math.floor(Math.random() * clothes.length) + 1;
+    setCurrentCloth(clothNumber);
+
+    const eyehNumber = Math.floor(Math.random() * EyeData.length) + 1;
+    setCurrentEye(eyehNumber);
+    const headNumber = Math.floor(Math.random() * headData.length) + 1;
+    setCurrentHead(headNumber);
+    const mouthNumber = Math.floor(Math.random() * MouthData.length) + 1;
+    setCurrentmouth(mouthNumber);
+    const skinNumber = Math.floor(Math.random() * skinData.length) + 1;
+    setCurrentskin(skinNumber);
+  };
   const handleNextskin = () => {
     if (currentskin < skinData.length) {
       setCurrentskin(currentskin + 1);
@@ -35,7 +50,6 @@ const HomePage = () => {
     }
   };
 
-
   const handleNextMouth = () => {
     if (currentmouth < MouthData.length) {
       setCurrentmouth(currentmouth + 1);
@@ -50,7 +64,6 @@ const HomePage = () => {
       setCurrentmouth(MouthData.length);
     }
   };
-
 
   const handleNextHead = () => {
     if (currentHead < headData.length) {
@@ -136,7 +149,10 @@ const HomePage = () => {
                 <div class="flex flex-col">
                   <div class="drop-shadow-2xl pt-[20px]">
                     <div class="border-[6px] border-lazyGreen/25 mb-2">
-                      <div class="h-[250px] w-[250px] md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px] relative" ref={elementRef}>
+                      <div
+                        class="h-[250px] w-[250px] md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px] relative"
+                        ref={elementRef}
+                      >
                         {/* background image */}
                         {background.map((da) => {
                           return (
@@ -160,7 +176,7 @@ const HomePage = () => {
                             )
                           );
                         })}
-    
+
                         {/* Eye wear Intial */}
                         {EyeData.map((da) => {
                           return (
@@ -195,7 +211,7 @@ const HomePage = () => {
                             )
                           );
                         })}
-            
+
                         {MouthData.map((da) => {
                           return (
                             da.id === currentmouth && (
@@ -206,186 +222,180 @@ const HomePage = () => {
                             )
                           );
                         })}
-                     
                       </div>
                     </div>
                   </div>
-            
-                  <button onClick={htmlToImageConvert} class="w-full h-[35px] text-lazyGreen text-xl bg-roadmapBgGreen opacity-75 rounded-xl relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[10px] hover:mb-[0px] hover:contrast-125 mt-[8px]">
+
+                  <button
+                    onClick={htmlToImageConvert}
+                    class="w-full h-[35px] text-lazyGreen text-xl bg-roadmapBgGreen opacity-75 rounded-xl relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[10px] hover:mb-[0px] hover:contrast-125 mt-[8px]"
+                  >
                     Save preview
                   </button>
-          
                 </div>
               </div>
               <div class="flex flex-1 flex-col flex-grow gap-3 justify-center text-lg items-center py-5 lg:py-0 lg:pl-10">
                 <p class="text-5xl tracking-tighter hidden lg:flex text-roadmapTitleGreen pb-5 font-intrepidBold">
                   Build your BearZ
                 </p>
-                <button class="w-[50%] min-h-[35px] text-white text-xl bg-lazyGreen rounded-xl relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[10px] hover:mb-[0px] hover:contrast-125 mt-[8px]">
+                <button
+                  class="w-[50%] min-h-[35px] text-white text-xl bg-lazyGreen rounded-xl relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[10px] hover:mb-[0px] hover:contrast-125 mt-[8px]"
+                  onClick={handleGenerateBtn}
+                >
                   Random - Surprise me!
                 </button>
-                <div class="mt-5 min-w-[240px] w-[80%]">
+                <div class="mt-5 min-w-[240px] w-[50%]">
                   <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
                     <div
-                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75"
-                     onClick={handlePrevHead}
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
+                      onClick={handlePrevHead}
                     >
                       &lt;
                     </div>
+
                     <div
-                      class="absolute w-full h-[8px] bottom-0 px-[3px]"
-                      onClick={handleNextHead}
-                    >
-                      <div
-                        class="h-full w-0 bg-white/50 rounded-[8px] rounded-tl-[0px]"
-                        style={{ width: "2.22222%" }}
-                      ></div>
-                    </div>
-                    <div
-                      class="h-full flex flex-row justify-center items-center grow"
+                      class="h-full flex flex-row justify-center items-center grow text-white"
                       onClick={handleNextHead}
                     >
                       Head
-                      <span class="pl-1 text-base text-lazyGreen/75">
-                        
+                      <span class="pl-1 text-base text-lazyGreen">
                         ({currentHead}/{headData.length})
                       </span>
                     </div>
                     <div
-                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75"
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
                       onClick={handleNextHead}
                     >
                       &gt;
                     </div>
                   </button>
                 </div>
-                <div class="min-w-[240px] w-[70%]">
+                <div class="min-w-[240px] w-[50%]">
                   <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
                     <div
-                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75"
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
                       onClick={handlePrevClothes}
                     >
                       &lt;
                     </div>
-                    <div
-                      class="absolute w-full h-[8px] bottom-0 px-[3px]"
-                      onClick={handleNextClothes}
-                    >
-                      <div
-                        class="h-full w-0 bg-white/50 rounded-[8px] rounded-tl-[0px]"
-                        style={{ width: "3.125%" }}
-                      ></div>
-                    </div>
+
                     <div
                       class="h-full flex flex-row justify-center items-center grow"
                       onClick={handleNextClothes}
                     >
                       Clothes
-                      <span class="pl-1 text-base text-lazyGreen/75">
+                      <span class="pl-1 text-base text-lazyGreen">
                         ({currentCloth}/{clothes.length})
                       </span>
                     </div>
                     <div
-                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75"
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
                       onClick={handleNextClothes}
                     >
                       &gt;
                     </div>
                   </button>
                 </div>
-                <div class="min-w-[240px] w-[66%]">
+                <div class="min-w-[240px] w-[50%]">
                   <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
-                    <div class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75" onClick={handlePrevEye}>
+                    <div
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
+                      onClick={handlePrevEye}
+                    >
                       &lt;
                     </div>
-                    <div class="absolute w-full h-[8px] bottom-0 px-[3px]" onClick={handleNextEye}>
-                      <div
-                        class="h-full w-0 bg-white/50 rounded-[8px] rounded-tl-[0px]"
-                        style={{ width: "4.16667%" }}
-                      ></div>
-                    </div>
-                    <div class="h-full flex flex-row justify-center items-center grow" onClick={handleNextEye}>
+
+                    <div
+                      class="h-full flex flex-row justify-center items-center grow"
+                      onClick={handleNextEye}
+                    >
                       Eye
-                      <span class="pl-1 text-base text-lazyGreen/75">
+                      <span class="pl-1 text-base text-lazyGreen">
                         ({currentEye}/{EyeData.length})
                       </span>
                     </div>
-                    <div class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75" onClick={handleNextEye}>
+                    <div
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
+                      onClick={handleNextEye}
+                    >
                       &gt;
                     </div>
                   </button>
                 </div>
-                <div class="min-w-[240px] w-[64%]">
+                <div class="min-w-[240px] w-[50%]">
                   <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
-                    <div class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75" onClick={handlePrevskin}>
+                    <div
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
+                      onClick={handlePrevskin}
+                    >
                       &lt;
                     </div>
-                    <div class="absolute w-full h-[8px] bottom-0 px-[3px]" onClick={handleNextskin}>
-                      <div
-                        class="h-full w-0 bg-white/50 rounded-[8px] rounded-tl-[0px]"
-                        style={{ width: "5%" }}
-                      ></div>
-                    </div>
-                    <div class="h-full flex flex-row justify-center items-center grow" onClick={handleNextskin}>
+
+                    <div
+                      class="h-full flex flex-row justify-center items-center grow"
+                      onClick={handleNextskin}
+                    >
                       skin
-                      <span class="pl-1 text-base text-lazyGreen/75">
-                        (1/20)
-                      </span>
+                      <span class="pl-1 text-base text-lazyGreen">(1/20)</span>
                     </div>
-                    <div class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75" onClick={handleNextskin}>
+                    <div
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
+                      onClick={handleNextskin}
+                    >
                       &gt;
                     </div>
                   </button>
                 </div>
-                <div class="flex flex-col md:flex-row gap-2">
-                  <div class="min-w-[240px] w-[60%]">
-                    <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
-                      <div class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75" onClick={handlePrevNouth}>
-                        &lt;
-                      </div>
-                      <div class="absolute w-full h-[8px] bottom-0 px-[3px]" onClick={handleNextMouth}>
-                        <div
-                          class="h-full w-0 bg-white/50 rounded-[8px] rounded-tl-[0px]"
-                          style={{ width: "4.34783%" }}
-                        ></div>
-                      </div>
-                      <div class="h-full flex flex-row justify-center items-center grow" onClick={handleNextMouth}>
-                        Mouth
-                        <span class="pl-1 text-base text-lazyGreen/75">
-                          ({currentmouth}/{MouthData.length})
-                        </span>
-                      </div>
-                      <div class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75" onClick={handleNextMouth}>
-                        &gt;
-                      </div>
-                    </button>
-                  </div>
-            
+                <div class="min-w-[240px] w-[50%]">
+                  <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
+                    <div
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
+                      onClick={handlePrevNouth}
+                    >
+                      &lt;
+                    </div>
+
+                    <div
+                      class="h-full flex flex-row justify-center items-center grow"
+                      onClick={handleNextMouth}
+                    >
+                      Mouth
+                      <span class="pl-1 text-base text-lazyGreen">
+                        ({currentmouth}/{MouthData.length})
+                      </span>
+                    </div>
+                    <div
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
+                      onClick={handleNextMouth}
+                    >
+                      &gt;
+                    </div>
+                  </button>
                 </div>
-                <div class="flex flex-col md:flex-row gap-2">
-                  <div class="min-w-[240px] w-[60%]">
-                    <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
-                      <div class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75"  onClick={handlePrevBg}>
-                        &lt;
-                      </div>
-                      <div class="absolute w-full h-[8px] bottom-0 px-[3px]" onClick={handleNextBg}>
-                        <div
-                          class="h-full w-0 bg-white/50 rounded-[8px] rounded-tl-[0px]"
-                          style={{ width: "5%" }}
-                        ></div>
-                      </div>
-                      <div class="h-full flex flex-row justify-center items-center grow" onClick={handleNextBg}>
-                        Background
-                        <span class="pl-1 text-base text-lazyGreen/75">
+                <div class="min-w-[240px] w-[50%]">
+                  <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
+                    <div
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
+                      onClick={handlePrevBg}
+                    >
+                      &lt;
+                    </div>
+                    <div
+                      class="h-full flex flex-row justify-center items-center grow"
+                      onClick={handleNextBg}
+                    >
+                      Background
+                      <span class="pl-1 text-base text-lazyGreen">
                         ({currentBg}/{background.length})
-                        </span>
-                      </div>
-                      <div class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen/75" onClick={handleNextBg}>
-                        &gt;
-                      </div>
-                    </button>
-                  </div>
-             
+                      </span>
+                    </div>
+                    <div
+                      class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
+                      onClick={handleNextBg}
+                    >
+                      &gt;
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>

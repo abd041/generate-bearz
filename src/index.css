@@ -886,17 +886,17 @@ img,video {
 
 .bg-lazyGreen {
     --tw-bg-opacity: 1;
-    background-color: rgb(42 72 40 / var(--tw-bg-opacity))
+    background-color:  #9c7854
 }
 
 .bg-roadmapBgGreen {
     --tw-bg-opacity: 1;
-    background-color: rgb(161 205 162 / var(--tw-bg-opacity))
+    background-color: #C4A484
 }
 
 .bg-\[\#b33030\] {
     --tw-bg-opacity: 1;
-    background-color: rgb(179 48 48 / var(--tw-bg-opacity))
+    background-color: #C4A484
 }
 
 .bg-\[\#d2ac36\] {
@@ -1165,7 +1165,10 @@ img,video {
 
 .text-roadmapTitleGreen {
     --tw-text-opacity: 1;
-    color: rgb(44 73 42 / var(--tw-text-opacity))
+    color:white
+}
+.text-lazyGreen{
+    color: white !important;
 }
 
 .text-roadmapNumberGreen {
@@ -1224,7 +1227,7 @@ img,video {
 }
 
 .opacity-75 {
-    opacity: .75
+    opacity: 1
 }
 
 .shadow-lg {
