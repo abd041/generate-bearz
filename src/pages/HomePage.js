@@ -142,12 +142,12 @@ const HomePage = () => {
         <div id="root" class="w-full">
           <div class="flex flex-col items-center  lg:justify-center px-5 w-full h-full overflow-y-scroll lg:overflow-hidden scrollbar-thin scrollbar-thumb-roadmapBgGreen scrollbar-track-transparent">
             <p class="text-center text-2xl md:text-3xl  flex justify-center tracking-tighter  lg:hidden text-roadmapTitleGreen mt-[100px] font-intrepidBold">
-              Create your villager
+              Create Your Villager
             </p>
             <div class="flex flex-col lg:flex-row w-full relative">
             <div class="flex flex-1 flex-col flex-grow gap-3 justify-center text-lg items-center py-5 lg:py-0 lg:pl-10">
         
-                <div class="mt-5 min-w-[240px] w-[50%]">
+                <div class="mt-5 min-w-[240px] w-[75%]">
                   <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
                     <div
                       class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
@@ -175,7 +175,7 @@ const HomePage = () => {
                 </div>
 
           
-                <div class="min-w-[240px] w-[50%]">
+                <div class="min-w-[240px] w-[75%]">
                   <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
                     <div
                       class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
@@ -199,7 +199,7 @@ const HomePage = () => {
                     </div>
                   </button>
                 </div>
-                <div class="min-w-[240px] w-[50%]">
+                <div class="min-w-[240px] w-[75%]">
                   <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
                     <div
                       class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
@@ -231,7 +231,7 @@ const HomePage = () => {
                 
                 <div class="flex flex-col ">
                 <p class="text-5xl tracking-tighter items-center justify-center hidden lg:flex text-roadmapTitleGreen pb-5 text-center font-intrepidBold">
-                  Create your villager
+                  Create Your Villager
                 </p>
                   <div class="drop-shadow-2xl pt-[20px]">
                     <div class="border-[6px] border-lazyGreen/25 mb-2">
@@ -329,7 +329,7 @@ const HomePage = () => {
               <div class="flex flex-1 flex-col flex-grow gap-3 justify-center text-lg items-center py-5 lg:py-0 lg:pl-10">
            
            
-                <div class="min-w-[240px] w-[50%]">
+                <div class="min-w-[240px] w-[75%]">
                   <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
                     <div
                       class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
@@ -357,7 +357,7 @@ const HomePage = () => {
                 </div>
             
             
-                <div class="min-w-[240px] w-[50%]">
+                <div class="min-w-[240px] w-[75%]">
                   <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
                     <div
                       class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
@@ -383,7 +383,7 @@ const HomePage = () => {
                     </div>
                   </button>
                 </div>
-                <div class="min-w-[240px] w-[50%]">
+                <div class="min-w-[240px] w-[75%]">
                   <button class="w-full h-[40px] text-lazyGreen text-xl bg-roadmapBgGreen rounded-xl flex flex-row items-center relative drop-shadow-lg hover:drop-shadow mb-[2px] hover:mt-[2px] hover:mb-[0px] hover:contrast-125">
                     <div
                       class="h-full w-10 flex justify-center items-center text-lazyGreen/50 hover:text-lazyGreen"
