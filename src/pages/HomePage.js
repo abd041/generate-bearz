@@ -229,12 +229,12 @@ const HomePage = () => {
               </div>
               <div class="flex flex-1 justify-center align-center">
                 
-                <div class="flex flex-col ">
+                <div class="flex flex-col justify-center items-center">
                 <p class="text-5xl tracking-tighter items-center justify-center hidden lg:flex text-roadmapTitleGreen pb-5 text-center font-intrepidBold">
                   Create Your Villager
                 </p>
-                  <div class="drop-shadow-2xl pt-[20px]">
-                    <div class="border-[6px] border-lazyGreen/25 mb-2">
+                  <div class="drop-shadow-2xl pt-[10px]">
+                    <div class="mb-2">
                       <div
                         class="h-[250px] w-[250px] md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px] relative"
                         ref={elementRef}
