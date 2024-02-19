@@ -1,9 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('./assets/VCR_OSD_MONO_1.001.ttf') format('truetype');
+    /* You can specify additional font properties here */
+}
 
+body {
+    font-family: 'VCR OSD Mono', sans-serif; /* Use the imported font */
+}
 
 .homepage-main-wrapper{
     background: url("./assets/word.webp");
@@ -30,7 +37,7 @@ html {
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji"
+    font-family: 'VCR OSD Mono', sans-serif;
 }
 
 body {
@@ -64,8 +71,7 @@ b,strong {
 }
 
 code,kbd,samp,pre {
-    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
-    font-size: 1em
+    font-family: 'VCR OSD Mono', sans-serif;  font-size: 1em
 }
 
 small {
@@ -1078,15 +1084,15 @@ img,video {
 }
 
 .font-pixellari {
-    font-family: Pixellari,sans-serif
+    font-family: 'VCR OSD Mono', sans-serif;
 }
 
 .font-intrepidBold {
-    font-family: Intrepid-Bold,sans-serif
+    font-family: 'VCR OSD Mono', sans-serif;
 }
 
 .font-pisangkeju {
-    font-family: Pisangkeju,serif
+    font-family: 'VCR OSD Mono', sans-serif;
 }
 
 .text-xl {
@@ -1129,7 +1135,7 @@ img,video {
 }
 
 .text-5xl {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1
 }
 
